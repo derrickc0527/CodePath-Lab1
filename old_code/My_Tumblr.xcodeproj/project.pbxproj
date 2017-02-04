@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		28B814AEC5CEFFB9BD797FF3 /* Pods_My_Tumblr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F34EE13A47CDD509A5967B3D /* Pods_My_Tumblr.framework */; };
-		4952BE1B1E43FC2400D691B2 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4952BE1A1E43FC2400D691B2 /* PhotoViewController.swift */; };
-		4952BE1D1E44018500D691B2 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4952BE1C1E44018500D691B2 /* PhotoCell.swift */; };
+		4988F9DB1E4583AE004B117B /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4988F9DA1E4583AE004B117B /* PhotosViewController.swift */; };
+		4988F9DF1E45885E004B117B /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4988F9DE1E45885E004B117B /* PhotoCell.swift */; };
 		4991126C1E43F43100F70463 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4991126B1E43F43100F70463 /* AppDelegate.swift */; };
 		499112711E43F43100F70463 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4991126F1E43F43100F70463 /* Main.storyboard */; };
 		499112731E43F43100F70463 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 499112721E43F43100F70463 /* Assets.xcassets */; };
@@ -18,8 +18,8 @@
 
 /* Begin PBXFileReference section */
 		2DEF71F07BE2130C351B1CB3 /* Pods-My_Tumblr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My_Tumblr.release.xcconfig"; path = "Pods/Target Support Files/Pods-My_Tumblr/Pods-My_Tumblr.release.xcconfig"; sourceTree = "<group>"; };
-		4952BE1A1E43FC2400D691B2 /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
-		4952BE1C1E44018500D691B2 /* PhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
+		4988F9DA1E4583AE004B117B /* PhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
+		4988F9DE1E45885E004B117B /* PhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		499112681E43F43100F70463 /* My_Tumblr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = My_Tumblr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4991126B1E43F43100F70463 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		499112701E43F43100F70463 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -71,13 +71,13 @@
 		4991126A1E43F43100F70463 /* My_Tumblr */ = {
 			isa = PBXGroup;
 			children = (
+				4988F9DA1E4583AE004B117B /* PhotosViewController.swift */,
 				4991126B1E43F43100F70463 /* AppDelegate.swift */,
 				4991126F1E43F43100F70463 /* Main.storyboard */,
 				499112721E43F43100F70463 /* Assets.xcassets */,
 				499112741E43F43100F70463 /* LaunchScreen.storyboard */,
 				499112771E43F43100F70463 /* Info.plist */,
-				4952BE1A1E43FC2400D691B2 /* PhotoViewController.swift */,
-				4952BE1C1E44018500D691B2 /* PhotoCell.swift */,
+				4988F9DE1E45885E004B117B /* PhotoCell.swift */,
 			);
 			path = My_Tumblr;
 			sourceTree = "<group>";
@@ -216,8 +216,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4991126C1E43F43100F70463 /* AppDelegate.swift in Sources */,
-				4952BE1D1E44018500D691B2 /* PhotoCell.swift in Sources */,
-				4952BE1B1E43FC2400D691B2 /* PhotoViewController.swift in Sources */,
+				4988F9DF1E45885E004B117B /* PhotoCell.swift in Sources */,
+				4988F9DB1E4583AE004B117B /* PhotosViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +261,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -310,6 +311,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

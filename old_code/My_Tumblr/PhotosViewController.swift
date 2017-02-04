@@ -1,27 +1,26 @@
 //
-//  PhotoViewController.swift
-//  My_Tumblr
+//  PhotosViewController.swift
+//  
 //
-//  Created by Derrick Chong on 2/2/17.
-//  Copyright © 2017 DerrickCorp. All rights reserved.
+//  Created by Derrick Chong on 2/3/17.
+//
 //
 
 import UIKit
 import AFNetworking
 
-class PhotoViewController: UIViewController,  UITableViewDataSource, UITableViewDelegate {
+class PhotosViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+
+    @IBOutlet weak var tableview: UITableView!
     
     var posts: [NSDictionary] = []
-
-    @IBOutlet var tableview: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tableview.dataSource = self
+
         tableview.delegate = self
-        
-        // Do any additional setup after loading the view.
+        tableview.dataSource = self
+        tableview.rowHeight = 240
         
         let url = URL(string:"https://api.tumblr.com/v2/blog/humansofnewyork.tumblr.com/posts/photo?api_key=Q6vHoaVm5L1u2ZAW1fqv3Jw48gFzYVg9P0vH0VHl3GVy6quoGV")
         let request = URLRequest(url: url!)
@@ -45,15 +44,13 @@ class PhotoViewController: UIViewController,  UITableViewDataSource, UITableView
                         
                         // This is where you will store the returned array of posts in your posts property
                         self.posts = responseFieldDictionary["posts"] as! [NSDictionary]
+                        self.tableview.reloadData()
                     }
                 }
         });
         task.resume()
-    }
+        
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -61,30 +58,33 @@ class PhotoViewController: UIViewController,  UITableViewDataSource, UITableView
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableview.dequeueReusableCell(withIdentifier: "PhotoCell", for: indexPath) as! PhotoCell
-        cell.textLabel?.text = "This is row \(indexPath.row)"
+        let cell = tableview.dequeueReusableCell(withIdentifier: "PhotoCell") as! PhotoCell
         let post = posts[indexPath.row]
-        //let timestamp = post["timestamp"] as? String
-        //let photos = post.value(forKeyPath: "photos") as? [NSDictionary]
-        
+
         if let photos = post.value(forKeyPath: "photos") as? [NSDictionary] {
-            // photos is NOT nil, go ahead and access element 0 and run the code in the curly braces
+            
             let imageUrlString = photos[0].value(forKeyPath: "original_size.url") as? String
             
             if let imageUrl = URL(string: imageUrlString!) {
-                // URL(string: imageUrlString!) is NOT nil, go ahead and unwrap it and assign it to imageUrl and run the code in the curly braces
                 cell.imageWindow.setImageWith(imageUrl)
-            } else {
-                // URL(string: imageUrlString!) is nil. Good thing we didn't try to unwrap it!
             }
-        } else {
-            // photos is nil. Good thing we didn't try to unwrap it!
+            else {
+                // no imageURL! for photo
+            }
+        }
+        else {
+            // no photos for post!
         }
         
-
         
-        return cell
+        return cell    }
+
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
+    
 
     /*
     // MARK: - Navigation

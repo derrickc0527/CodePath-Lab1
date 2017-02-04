@@ -2,7 +2,7 @@
 //  PhotoCell.swift
 //  My_Tumblr
 //
-//  Created by Derrick Chong on 2/2/17.
+//  Created by Derrick Chong on 2/3/17.
 //  Copyright © 2017 DerrickCorp. All rights reserved.
 //
 
@@ -21,7 +21,6 @@ class PhotoCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
-        
     }
 
 }
